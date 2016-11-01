@@ -4,6 +4,7 @@ import javax.swing.JPanel;
 import graphic.controller.FirstGUIController;
 import java.awt.Color;
 import javax.swing.JButton;
+import javax.swing.SpringLayout;
 
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
@@ -13,6 +14,7 @@ public class FirstPanel extends JPanel
 	private FirstGUIController baseController;
 	private JButton colorButton;
 	private JButton randomButton;
+	private SpringLayout baseLayout;
 	public FirstPanel(FirstGUIController baseController)
 	
 	{
@@ -21,6 +23,7 @@ public class FirstPanel extends JPanel
 		
 		colorButton = new JButton ("Color!");
 		randomButton = new JButton("Random");
+		baseLayout = new SpringLayout();
 		
 		setupPanel();
 		setupLayout();
@@ -33,6 +36,8 @@ public class FirstPanel extends JPanel
 	{
 		this.setBackground(Color.CYAN);
 		this.add(randomButton);
+		this.add(colorButton);
+		this.setLayout(baseLayout);
 	}
 	private void setupLayout()
 	{
